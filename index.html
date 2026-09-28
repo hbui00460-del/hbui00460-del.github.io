@@ -51,7 +51,7 @@
     <div class="box">
         <h2>Connect TikTok</h2>
 
-        <button>
+        <button onclick="loginTikTok()">
             Connect with TikTok
         </button>
     </div>
@@ -67,6 +67,26 @@
             Upload to TikTok
         </button>
     </div>
+<script>
+function loginTikTok() {
+    const clientKey = "aw7lw1qdl4y3t6n5";
 
+    const redirectUri = encodeURIComponent(
+        "https://hbui00460-del.github.io/"
+    );
+
+    const state = "autoai";
+
+    const url =
+        "https://www.tiktok.com/v2/auth/authorize/" +
+        "?client_key=" + clientKey +
+        "&response_type=code" +
+        "&scope=user.info.basic,video.upload" +
+        "&redirect_uri=" + redirectUri +
+        "&state=" + state;
+
+    window.location.href = url;
+}
+</script>
 </body>
 </html>
